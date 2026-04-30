@@ -33,9 +33,13 @@
         }
       };
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/design-system.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar-modern.css">
     <link rel="stylesheet" href="css/about.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/footer-modern.css">
+    <link rel="stylesheet" href="css/page-banner.css">
     <!-- Enhanced SEO Meta Tags -->
     <title data-lang-en="About My Doll Inventory - Product Tracking & Knowledge Sharing" data-lang-es="Sobre Mi Inventario de Muñecas - Seguimiento de Productos y Compartir Conocimiento">About My Doll Inventory - Product Tracking & Knowledge Sharing</title>
     <meta name="description" content="Learn about My Doll Inventory project - a platform for tracking doll products, sharing knowledge, and building a community around doll collecting and hobby tips.">
@@ -122,20 +126,29 @@
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div id="navbar-placeholder"></div>
 
-    <div class="about-container max-w-6xl mx-auto px-4 md:px-8 min-h-screen py-8">
-      <header class="about-header text-center py-10">
-        <h1 class="font-heading text-4xl md:text-5xl text-[#2c3e50]" data-lang-en="About My Doll Inventory" data-lang-es="Sobre Mi Inventario de Muñecas">About My Doll Inventory</h1>
-      </header>
+    <!-- Page Banner -->
+    <section class="page-banner" data-page="about">
+      <div class="page-banner-content">
+        <h1 class="page-banner-title" data-lang-en="About My Doll Inventory" data-lang-jp="マイドールインベントリーについて" data-lang-es="Sobre Mi Inventario de Muñecas">About My Doll Inventory</h1>
+        <p class="page-banner-subtitle" data-lang-en="Personal notebook for niche hobbies, guides, and collecting"
+           data-lang-jp="ニッチな趣味、ガイド、コレクティングのための個人ノート"
+           data-lang-es="Cuaderno personal para hobbies de nicho, guías y coleccionismo">
+          Personal notebook for niche hobbies, guides, and collecting
+        </p>
+      </div>
+      <div class="page-banner-decoration"></div>
+    </section>
 
-      <section class="about-content space-y-10">
-        <div class="mission-statement bg-white rounded-xl shadow-md p-6 md:p-8 border border-[#f0f0f0]">
-          <h2 class="font-heading text-2xl md:text-3xl text-[#2c3e50] mb-3" data-lang-en="What is this site?" data-lang-es="¿Qué es este sitio?">What is this site?</h2>
-          <p class="text-[1.05rem] leading-7 text-[#2c3e50] mb-4" data-lang-en="This is my personal notebook for niche hobbies. Think of it as my organized collection of notes, FAQs, and beginner-friendly guides that I wish existed when I started." data-lang-es="Este es mi cuaderno personal para hobbies de nicho. Piénsalo como mi colección organizada de notas, preguntas frecuentes y guías para principiantes que desearía que existieran cuando empecé.">This is my personal notebook for niche hobbies. Think of it as my organized collection of notes, FAQs, and beginner-friendly guides that I wish existed when I started.</p>
-          <p class="text-[1.05rem] leading-7 text-[#2c3e50]" data-lang-en="I consolidate scattered information about 1/6 scale dolls, resin figures, and other collectibles in one place. No fluff, no gatekeeping—just straightforward answers and documentation for my YouTube videos and anyone who finds it useful." data-lang-es="Consolido información dispersa sobre muñecas escala 1/6, figuras de resina y otros coleccionables en un solo lugar. Sin relleno, sin elitismo—solo respuestas directas y documentación para mis videos de YouTube y cualquiera que lo encuentre útil.">I consolidate scattered information about 1/6 scale dolls, resin figures, and other collectibles in one place. No fluff, no gatekeeping—just straightforward answers and documentation for my YouTube videos and anyone who finds it useful.</p>
+    <main id="main-content">
+      <div class="about-container">
+        <div class="mission-statement">
+          <h2 class="font-heading text-2xl md:text-3xl text-[#1a202c] mb-3" data-lang-en="What is this site?" data-lang-es="¿Qué es este sitio?">What is this site?</h2>
+          <p class="text-[1.05rem] leading-7 text-[#4a5568] mb-4" data-lang-en="This is my personal notebook for niche hobbies. Think of it as my organized collection of notes, FAQs, and beginner-friendly guides that I wish existed when I started." data-lang-es="Este es mi cuaderno personal para hobbies de nicho. Piénsalo como mi colección organizada de notas, preguntas frecuentes y guías para principiantes que desearía que existieran cuando empecé.">This is my personal notebook for niche hobbies. Think of it as my organized collection of notes, FAQs, and beginner-friendly guides that I wish existed when I started.</p>
+          <p class="text-[1.05rem] leading-7 text-[#4a5568]" data-lang-en="I consolidate scattered information about 1/6 scale dolls, resin figures, and other collectibles in one place. No fluff, no gatekeeping—just straightforward answers and documentation for my YouTube videos and anyone who finds it useful." data-lang-es="Consolido información dispersa sobre muñecas escala 1/6, figuras de resina y otros coleccionables en un solo lugar. Sin relleno, sin elitismo—solo respuestas directas y documentación para mis videos de YouTube y cualquiera que lo encuentre útil.">I consolidate scattered information about 1/6 scale dolls, resin figures, and other collectibles in one place. No fluff, no gatekeeping—just straightforward answers and documentation for my YouTube videos and anyone who finds it useful.</p>
         </div>
 
-        <div id="collection-section" class="features bg-white rounded-xl shadow-md p-6 md:p-8 border border-[#f0f0f0]">
-          <h2 class="font-heading text-2xl md:text-3xl text-[#2c3e50] mb-4" data-lang-en="What you'll find here" data-lang-es="Qué encontrarás aquí">What you'll find here</h2>
+        <div id="collection-section" class="features">
+          <h2 class="font-heading text-2xl md:text-3xl text-[#1a202c] mb-4" data-lang-en="What you'll find here" data-lang-es="Qué encontrarás aquí">What you'll find here</h2>
           <ul class="space-y-6">
             <li class="border-l-4 border-brand-gold pl-4">
               <h3 class="text-xl font-semibold text-[#2c3e50]" data-lang-en="📚 Beginner-Friendly Guides" data-lang-es="📚 Guías para Principiantes">📚 Beginner-Friendly Guides</h3>
@@ -157,36 +170,36 @@
         </div>
 
         <!-- Mascot Section (Full) -->
-        <section id="mascot-section" class="mascot-section space-y-8 mt-10">
-          <h2 class="font-heading text-3xl md:text-4xl text-[#2c3e50] text-center mb-8" data-lang-en="Meet Our Mascot" data-lang-jp="マスコットに会おう" data-lang-es="Conoce a Nuestra Mascota">Meet Our Mascot</h2>
+        <section id="mascot-section" class="mascot-section space-y-8">
+          <h2 class="font-heading text-3xl md:text-4xl text-white text-center mb-8" data-lang-en="Meet Our Mascot" data-lang-jp="マスコットに会おう" data-lang-es="Conoce a Nuestra Mascota">Meet Our Mascot</h2>
 
           <!-- Main Mascot Info with Image -->
-          <div class="mascot-main-content grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-xl p-6 md:p-8 shadow-md border border-[#f0f0f0]">
+          <div class="mascot-main-content">
             <div class="mascot-info space-y-4">
-              <h3 class="text-3xl font-heading text-[#2c3e50]" data-lang-en="Meet Undefined - Your AI Collecting Companion" data-lang-jp="Undefinedに会おう - あなたのAIコレクションコンパニオン" data-lang-es="Conoce a Undefined - Tu Compañera AI de Coleccionismo">Meet Undefined - Your AI Collecting Companion</h3>
-              <p class="text-[1.05rem] leading-7 text-[#2c3e50]" data-lang-en="In an age where AI can generate anything, why dream small with existing characters? Undefined is a custom AI-designed mascot created specifically as the perfect collecting companion—someone who shares your passion for figures, dolls, and niche hobbies without judgment." data-lang-jp="AIが何でも生成できる時代に、なぜ既存のキャラクターで小さく夢見るのですか？ Undefinedは、フィギュア、ドール、ニッチな趣味への情熱を共有する完璧なコレクションコンパニオンとして特別に作成されたカスタムAIデザインのマスコットです。" data-lang-es="En una era donde la IA puede generar cualquier cosa, ¿por qué soñar en pequeño con personajes existentes? Undefined es una mascota diseñada por IA creada específicamente como la compañera perfecta de coleccionismo—alguien que comparte tu pasión por las figuras, muñecas y hobbies de nicho sin juzgar.">In an age where AI can generate anything, why dream small with existing characters? Undefined is a custom AI-designed mascot created specifically as the perfect collecting companion—someone who shares your passion for figures, dolls, and niche hobbies without judgment.</p>
-              <p class="text-[1.05rem] leading-7 text-[#2c3e50]" data-lang-en="She's not from any franchise. She's not licensed. She's undefined by design—a blank canvas that represents the endless possibilities of the hobby. Whether you're into 1/6 scale figures, resin kits, Metal Build models, or random AliExpress finds, Undefined is here to help you track, discover, and share your collection." data-lang-jp="彼女はどのフランチャイズにも属していません。ライセンスされていません。デザインによって未定義であり、趣味の無限の可能性を表すブランクキャンバスです。1/6スケールフィギュア、レジンキット、メタルビルドモデル、ランダムなAliExpress発見品など、Undefinedがコレクションの追跡、発見、共有をサポートします。" data-lang-es="No es de ninguna franquicia. No tiene licencia. Es indefinida por diseño—un lienzo en blanco que representa las posibilidades infinitas del hobby. Ya sea que te gusten las figuras escala 1/6, kits de resina, modelos Metal Build o hallazgos aleatorios de AliExpress, Undefined está aquí para ayudarte a rastrear, descubrir y compartir tu colección.">She's not from any franchise. She's not licensed. She's undefined by design—a blank canvas that represents the endless possibilities of the hobby. Whether you're into 1/6 scale figures, resin kits, Metal Build models, or random AliExpress finds, Undefined is here to help you track, discover, and share your collection.</p>
+              <h3 class="text-3xl font-heading text-white" data-lang-en="Meet Undefined - Your AI Collecting Companion" data-lang-jp="Undefinedに会おう - あなたのAIコレクションコンパニオン" data-lang-es="Conoce a Undefined - Tu Compañera AI de Coleccionismo">Meet Undefined - Your AI Collecting Companion</h3>
+              <p class="text-[1.05rem] leading-7 text-white/90" data-lang-en="In an age where AI can generate anything, why dream small with existing characters? Undefined is a custom AI-designed mascot created specifically as the perfect collecting companion—someone who shares your passion for figures, dolls, and niche hobbies without judgment." data-lang-jp="AIが何でも生成できる時代に、なぜ既存のキャラクターで小さく夢見るのですか？ Undefinedは、フィギュア、ドール、ニッチな趣味への情熱を共有する完璧なコレクションコンパニオンとして特別に作成されたカスタムAIデザインのマスコットです。" data-lang-es="En una era donde la IA puede generar cualquier cosa, ¿por qué soñar en pequeño con personajes existentes? Undefined es una mascota diseñada por IA creada específicamente como la compañera perfecta de coleccionismo—alguien que comparte tu pasión por las figuras, muñecas y hobbies de nicho sin juzgar.">In an age where AI can generate anything, why dream small with existing characters? Undefined is a custom AI-designed mascot created specifically as the perfect collecting companion—someone who shares your passion for figures, dolls, and niche hobbies without judgment.</p>
+              <p class="text-[1.05rem] leading-7 text-white/90" data-lang-en="She's not from any franchise. She's not licensed. She's undefined by design—a blank canvas that represents the endless possibilities of the hobby. Whether you're into 1/6 scale figures, resin kits, Metal Build models, or random AliExpress finds, Undefined is here to help you track, discover, and share your collection." data-lang-jp="彼女はどのフランチャイズにも属していません。ライセンスされていません。デザインによって未定義であり、趣味の無限の可能性を表すブランクキャンバスです。1/6スケールフィギュア、レジンキット、メタルビルドモデル、ランダムなAliExpress発見品など、Undefinedがコレクションの追跡、発見、共有をサポートします。" data-lang-es="No es de ninguna franquicia. No tiene licencia. Es indefinida por diseño—un lienzo en blanco que representa las posibilidades infinitas del hobby. Ya sea que te gusten las figuras escala 1/6, kits de resina, modelos Metal Build o hallazgos aleatorios de AliExpress, Undefined está aquí para ayudarte a rastrear, descubrir y compartir tu colección.">She's not from any franchise. She's not licensed. She's undefined by design—a blank canvas that represents the endless possibilities of the hobby. Whether you're into 1/6 scale figures, resin kits, Metal Build models, or random AliExpress finds, Undefined is here to help you track, discover, and share your collection.</p>
 
               <div class="mascot-features grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
-                <div class="mascot-feature flex items-center gap-2 px-3 py-2 rounded-lg bg-[#f8f9fa] border border-[#f0f0f0] text-[#2c3e50]">
+                <div class="mascot-feature">
                   <span class="feature-icon">🤖</span>
                   <span data-lang-en="AI-Generated" data-lang-jp="AI生成" data-lang-es="Generada por IA">AI-Generated, Not Corporate-Owned</span>
                 </div>
-                <div class="mascot-feature flex items-center gap-2 px-3 py-2 rounded-lg bg-[#f8f9fa] border border-[#f0f0f0] text-[#2c3e50]">
+                <div class="mascot-feature">
                   <span class="feature-icon">💜</span>
                   <span data-lang-en="Your Collecting Assistant" data-lang-jp="コレクションアシスタント" data-lang-es="Tu Asistente de Colección">Your Collecting Assistant</span>
                 </div>
-                <div class="mascot-feature flex items-center gap-2 px-3 py-2 rounded-lg bg-[#f8f9fa] border border-[#f0f0f0] text-[#2c3e50]">
+                <div class="mascot-feature">
                   <span class="feature-icon">🎨</span>
                   <span data-lang-en="Ever-Evolving" data-lang-jp="進化し続ける" data-lang-es="En Constante Evolución">Ever-Evolving Designs</span>
                 </div>
-                <div class="mascot-feature flex items-center gap-2 px-3 py-2 rounded-lg bg-[#f8f9fa] border border-[#f0f0f0] text-[#2c3e50]">
+                <div class="mascot-feature">
                   <span class="feature-icon">📚</span>
                   <span data-lang-en="Guides Through Chaos" data-lang-jp="カオスをナビゲート" data-lang-es="Guía el Caos">Guides You Through Hobby Chaos</span>
                 </div>
               </div>
 
-              <p class="text-sm text-[#2c3e50] mt-4 italic" data-lang-en="Follow @undefinenable on Instagram to see Undefined in action—new outfits, poses, and adventures in the world of collecting." data-lang-jp="Instagramで@undefinenableをフォローして、Undefinedの実際の活動を見てください—新しい衣装、ポーズ、コレクティングの世界での冒険。" data-lang-es="Sigue a @undefinenable en Instagram para ver a Undefined en acción—nuevos atuendos, poses y aventuras en el mundo del coleccionismo.">Follow <a href="https://www.instagram.com/undefinenable/" target="_blank" class="text-brand-accent hover:underline">@undefinenable</a> on Instagram to see Undefined in action—new outfits, poses, and adventures in the world of collecting.</p>
+              <p class="text-sm text-white/80 mt-4 italic" data-lang-en="Follow @undefinenable on Instagram to see Undefined in action—new outfits, poses, and adventures in the world of collecting." data-lang-jp="Instagramで@undefinenableをフォローして、Undefinedの実際の活動を見てください—新しい衣装、ポーズ、コレクティングの世界での冒険。" data-lang-es="Sigue a @undefinenable en Instagram para ver a Undefined en acción—nuevos atuendos, poses y aventuras en el mundo del coleccionismo.">Follow <a href="https://www.instagram.com/undefinenable/" target="_blank" class="text-brand-accent hover:underline">@undefinenable</a> on Instagram to see Undefined in action—new outfits, poses, and adventures in the world of collecting.</p>
             </div>
             <div class="mascot-main-image flex justify-center md:justify-end">
               <img src="assets/images/mascot/active-version-design.jpeg" alt="Undefined - Website Mascot" class="mascot-main-img max-h-80 rounded-xl shadow-lg">
@@ -194,9 +207,9 @@
           </div>
 
           <!-- Character Gallery -->
-          <div class="mascot-gallery-section bg-white rounded-xl p-6 md:p-8 shadow-md border border-[#f0f0f0]">
-            <h3 class="text-2xl font-heading text-[#2c3e50] mb-2" data-lang-en="AI Design Gallery" data-lang-es="Galería de Diseño AI">AI Design Gallery</h3>
-            <p class="text-[#2c3e50] mb-6" data-lang-en="Explore different versions and styles of Undefined, all generated with AI. From cosplay concepts to various artistic interpretations." data-lang-es="Explora diferentes versiones y estilos de Undefined, todos generados con IA. Desde conceptos de cosplay hasta varias interpretaciones artísticas.">Explore different versions and styles of Undefined, all generated with AI. From cosplay concepts to various artistic interpretations.</p>
+          <div class="mascot-gallery-section">
+            <h3 class="text-2xl font-heading text-white mb-2" data-lang-en="AI Design Gallery" data-lang-es="Galería de Diseño AI">AI Design Gallery</h3>
+            <p class="text-white/80 mb-6" data-lang-en="Explore different versions and styles of Undefined, all generated with AI. From cosplay concepts to various artistic interpretations." data-lang-es="Explora diferentes versiones y estilos de Undefined, todos generados con IA. Desde conceptos de cosplay hasta varias interpretaciones artísticas.">Explore different versions and styles of Undefined, all generated with AI. From cosplay concepts to various artistic interpretations.</p>
 
             <div class="carousel-container relative mt-6">
               <button class="carousel-btn prev-btn absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 grid place-items-center rounded-full bg-black/50 text-white hover:bg-black/70 transition" aria-label="Previous image">‹</button>
@@ -309,9 +322,9 @@
           </div>
 
           <!-- Fun Facts -->
-          <div class="mascot-facts bg-white rounded-xl p-6 md:p-8 shadow-md border border-[#f0f0f0]">
-            <h3 class="text-2xl font-heading text-[#2c3e50] mb-4" data-lang-en="About the Design" data-lang-es="Sobre el Diseño">About the Design</h3>
-            <ul class="space-y-3 text-[#2c3e50]">
+          <div class="mascot-facts rounded-xl p-6 md:p-8">
+            <h3 class="text-2xl font-heading text-white mb-4" data-lang-en="About the Design" data-lang-es="Sobre el Diseño">About the Design</h3>
+            <ul class="space-y-3 text-white/90">
               <li class="flex items-start gap-3">
                 <span class="text-brand-gold">▸</span>
                 <span data-lang-en="All designs were generated using AI image generation tools" data-lang-es="Todos los diseños fueron generados usando herramientas de generación de imágenes con IA">All designs were generated using AI image generation tools</span>
@@ -333,9 +346,9 @@
         </section>
 
         <!-- Instagram Showcase Section -->
-        <section class="instagram-showcase bg-white rounded-xl p-6 md:p-8 shadow-md border border-[#f0f0f0] mt-10">
-          <h3 class="text-2xl font-heading text-[#2c3e50] mb-2 text-center" data-lang-en="Latest on Instagram" data-lang-jp="Instagramの最新情報" data-lang-es="Últimas en Instagram">Latest on Instagram</h3>
-          <p class="text-[#2c3e50] mb-6 text-center" data-lang-en="Follow @undefinenable for more mascot adventures, cosplay concepts, and collecting inspiration!" data-lang-jp="@undefinenableをフォローして、もっとマスコットの冒険、コスプレコンセプト、コレクティングのインスピレーションを見よう！" data-lang-es="¡Sigue a @undefinenable para más aventuras de la mascota, conceptos de cosplay e inspiración de coleccionismo!">Follow @undefinenable for more mascot adventures, cosplay concepts, and collecting inspiration!</p>
+        <section class="instagram-showcase rounded-xl p-6 md:p-8 shadow-md">
+          <h3 class="text-2xl font-heading mb-2 text-center" data-lang-en="Latest on Instagram" data-lang-jp="Instagramの最新情報" data-lang-es="Últimas en Instagram">Latest on Instagram</h3>
+          <p class="mb-6 text-center" data-lang-en="Follow @undefinenable for more mascot adventures, cosplay concepts, and collecting inspiration!" data-lang-jp="@undefinenableをフォローして、もっとマスコットの冒険、コスプレコンセプト、コレクティングのインスピレーションを見よう！" data-lang-es="¡Sigue a @undefinenable para más aventuras de la mascota, conceptos de cosplay e inspiración de coleccionismo!">Follow @undefinenable for more mascot adventures, cosplay concepts, and collecting inspiration!</p>
 
           <div class="instagram-grid grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
             <!-- Instagram Post 1 -->
@@ -385,21 +398,21 @@
           </div>
         </section>
 
-        <h2 id="creator-section" class="community-title font-heading text-2xl md:text-3xl text-[#2c3e50] mt-10" data-lang-en="Join Our Community" data-lang-es="Únete a Nuestra Comunidad">Join Our Community</h2>
-        <div class="community mt-4">
-          <p class="text-[#2c3e50]" data-lang-en="Want to connect with other collectors, share your creations, or get help with your projects? Join our Discord server where you can chat, ask questions, and be part of our growing community!" data-lang-es="¿Quieres conectar con otros coleccionistas, compartir tus creaciones o obtener ayuda con tus proyectos? ¡Únete a nuestro servidor de Discord donde puedes chatear, hacer preguntas y ser parte de nuestra comunidad en crecimiento!">Want to connect with other collectors, share your creations, or get help with your projects? Join our Discord server where you can chat, ask questions, and be part of our growing community!</p>
+        <h2 id="creator-section" class="community-title font-heading text-2xl md:text-3xl" data-lang-en="Join Our Community" data-lang-es="Únete a Nuestra Comunidad">Join Our Community</h2>
+        <div class="community">
+          <p class="text-white/90" data-lang-en="Want to connect with other collectors, share your creations, or get help with your projects? Join our Discord server where you can chat, ask questions, and be part of our growing community!" data-lang-es="¿Quieres conectar con otros coleccionistas, compartir tus creaciones o obtener ayuda con tus proyectos? ¡Únete a nuestro servidor de Discord donde puedes chatear, hacer preguntas y ser parte de nuestra comunidad en crecimiento!">Want to connect with other collectors, share your creations, or get help with your projects? Join our Discord server where you can chat, ask questions, and be part of our growing community!</p>
           
           <div class="discord-invite mt-4">
-            <div class="discord-card flex items-center gap-4 p-4 rounded-xl bg-[#f8f9fa] border border-[#e0e0e0] shadow-sm">
-              <div class="discord-icon text-[#5865F2]">
+            <div class="discord-card">
+              <div class="discord-icon">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.994a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
                 </svg>
               </div>
               <div class="discord-content">
-                <h3 class="text-xl font-semibold text-[#2c3e50]" data-lang-en="Discord Server" data-lang-es="Servidor de Discord">Discord Server</h3>
-                <p class="text-[#2c3e50]" data-lang-en="Join our Discord community to connect with other collectors, share your work, and get help with your projects!" data-lang-es="¡Únete a nuestra comunidad de Discord para conectar con otros coleccionistas, compartir tu trabajo y obtener ayuda con tus proyectos!">Join our Discord community to connect with other collectors, share your work, and get help with your projects!</p>
-                <a href="https://discord.gg/your-invite-link" target="_blank" rel="noopener noreferrer" class="discord-btn inline-flex items-center mt-2 px-4 py-2 rounded-md border border-[#5865F2] text-[#5865F2] hover:bg-[#5865F2] hover:text-white transition">
+                <h3 class="text-xl font-semibold" data-lang-en="Discord Server" data-lang-es="Servidor de Discord">Discord Server</h3>
+                <p data-lang-en="Join our Discord community to connect with other collectors, share your work, and get help with your projects!" data-lang-es="¡Únete a nuestra comunidad de Discord para conectar con otros coleccionistas, compartir tu trabajo y obtener ayuda con tus proyectos!">Join our Discord community to connect with other collectors, share your work, and get help with your projects!</p>
+                <a href="https://discord.gg/your-invite-link" target="_blank" rel="noopener noreferrer" class="discord-btn">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
                     <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.994a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
                   </svg>
@@ -409,15 +422,16 @@
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </main>
 
     <div id="footer-placeholder"></div>
 
-    <script src="js/navbar-loader.js"></script>
-    <script src="js/footer-loader.js"></script>
-    <script src="js/language-switcher.js"></script>
-    <script src="js/age-disclaimer.js"></script>
+    <script src="/js/page-banner.js"></script>
+    <script src="/js/navbar-loader.js"></script>
+    <script src="/js/footer-loader.js"></script>
+    <script src="/js/language-switcher.js"></script>
+    <script src="/js/age-disclaimer.js"></script>
     <script>
       // Carousel functionality
       document.addEventListener('DOMContentLoaded', function() {

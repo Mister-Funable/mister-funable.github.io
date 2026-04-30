@@ -33,6 +33,8 @@
       }
     };
   </script>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/navbar-modern.css">
   <link rel="stylesheet" href="css/posts.css">
@@ -86,23 +88,18 @@
   <main id="main-content">
     <div class="posts-container">
 
-      <!-- Anime & Dolls Section -->
-      <section class="posts-category-section" id="anime-dolls">
-        <div class="posts-category-header">
-          <h2 class="posts-category-title" data-lang-en="Anime & Dolls" data-lang-jp="アニメ＆ドール" data-lang-es="Anime y Muñecas">Anime & Dolls</h2>
-          <p class="posts-category-desc" data-lang-en="Figures, photography, and the collector's perspective" data-lang-jp="フィギュア、写真、コレクターの視点" data-lang-es="Figuras, fotografía y la perspectiva del coleccionista">Figures, photography, and the collector's perspective</p>
-        </div>
-        <div class="posts-grid" id="anime-dolls-grid"></div>
-      </section>
+      <!-- Featured Post -->
+      <div class="posts-featured" id="posts-featured"></div>
 
-      <!-- Tech Section -->
-      <section class="posts-category-section" id="tech">
-        <div class="posts-category-header">
-          <h2 class="posts-category-title" data-lang-en="Tech" data-lang-jp="テック" data-lang-es="Tecnología">Tech</h2>
-          <p class="posts-category-desc" data-lang-en="N8N, Meshtastic, automation, and developer tools" data-lang-jp="N8N、Meshtastic、自動化、開発者ツール" data-lang-es="N8N, Meshtastic, automatización y herramientas de desarrollo">N8N, Meshtastic, automation, and developer tools</p>
-        </div>
-        <div class="posts-grid" id="tech-grid"></div>
-      </section>
+      <!-- Category Tabs -->
+      <nav class="posts-tabs" aria-label="Post categories">
+        <button class="posts-tab active" data-category="all" data-lang-en="All" data-lang-jp="すべて" data-lang-es="Todos">All</button>
+        <button class="posts-tab" data-category="anime-dolls" data-lang-en="Anime & Dolls" data-lang-jp="アニメ＆ドール" data-lang-es="Anime y Muñecas">Anime & Dolls</button>
+        <button class="posts-tab" data-category="tech" data-lang-en="Tech" data-lang-jp="テック" data-lang-es="Tecnología">Tech</button>
+      </nav>
+
+      <!-- Unified Grid -->
+      <div class="posts-grid" id="posts-all-grid"></div>
 
     </div>
   </main>
@@ -116,327 +113,98 @@
   <script>
   (function() {
     var posts = [
-      {
-        id: "01",
-        title: "Running N8N Locally with Ngrok",
-        category: "tech",
-        image: "/medium/images/01/img-01.png",
-        mediumUrl: "https://medium.com/@mister.funable/running-n8n-locally-with-ngrok-734af69e1530",
-        file: "/medium/01 - Running N8N Locally with Ngrok.md",
-        published: "2025-10-27",
-        description: "Run N8N locally and expose it via Ngrok tunnel for webhook callbacks."
-      },
-      {
-        id: "02",
-        title: "How (Not) to Work with Local Files in N8N",
-        category: "tech",
-        image: "/medium/images/02/img-01.png",
-        mediumUrl: "https://medium.com/@mister.funable/how-not-to-work-with-local-files-in-n8n-8c4545a3f2b2",
-        file: "/medium/02 - How (Not) to Work with Local Files in N8N.md",
-        published: "2025-11-10",
-        description: "Lessons learned automating video uploads and working with local files in n8n."
-      },
-      {
-        id: "03",
-        title: "Getting Started with Meshtastic on Heltec V3 and LILYGO T-Beam",
-        category: "tech",
-        image: "/medium/images/03/img-01.png",
-        mediumUrl: "https://radiohackers.com/getting-started-with-meshtastic-on-heltec-v3-and-lilygo-t-beam-e287f44df7b8",
-        file: "/medium/03 - Getting Started with Meshtastic on Heltec V3 and LILYGO T-Beam.md",
-        published: "2025-11-14",
-        description: "Introduction to Meshtastic mesh networking with Heltec V3 and LILYGO T-Beam devices."
-      },
-      {
-        id: "04",
-        title: "Meshtastic Questions I Had After Getting Started",
-        category: "tech",
-        image: "/medium/images/04/img-01.png",
-        mediumUrl: "https://medium.com/@mister.funable/meshtastic-questions-i-had-after-getting-started-b0a634a39bae",
-        file: "/medium/04 - Meshtastic Questions I Had After Getting Started.md",
-        published: "2025-11-14",
-        description: "Q&A covering common Meshtastic questions from beginner to intermediate level."
-      },
-      {
-        id: "05",
-        title: "Setting Up a Local Meshtastic Message Forwarder",
-        category: "tech",
-        image: "/medium/images/05/img-01.png",
-        mediumUrl: "https://medium.com/@mister.funable/setting-up-a-local-meshtastic-message-forwarder-c527bca2eb0e",
-        file: "/medium/05 - Setting Up a Local Meshtastic Message Forwarder.md",
-        published: "2025-11-14",
-        description: "Set up a local forwarder that listens to Meshtastic channels and exports messages via Python."
-      },
-      {
-        id: "06",
-        title: "N8N Nodes You Should Know (But Probably Don't)",
-        category: "tech",
-        image: "/medium/images/06/img-01.png",
-        mediumUrl: "https://medium.com/@mister.funable/n8n-nodes-you-should-know-but-probably-dont-06d61b77c457",
-        file: "/medium/06 - N8N Nodes You Should Know (But Probably Don't).md",
-        published: "2025-11-16",
-        description: "Overlooked N8N nodes that simplify projects and reduce maintenance."
-      },
-      {
-        id: "07",
-        title: "Sony A6700 Settings for Unboxing and Figure Videos",
-        category: "anime-dolls",
-        image: "/medium/images/07/img-01.png",
-        mediumUrl: "https://medium.com/@mister.funable/sony-a6700-settings-for-unboxing-and-figure-videos-4ca3ddd4ecac",
-        file: "/medium/07 - Sony A6700 Settings for Unboxing and Figure Videos.md",
-        published: "2025-11-17",
-        description: "Camera settings guide for the Sony A6700 for recording unboxing and collectible videos."
-      },
-      {
-        id: "08",
-        title: "Fixing N8N Docker Error: The X-Forwarded-For Issue + Bonus",
-        category: "tech",
-        image: "/medium/images/08/img-01.png",
-        mediumUrl: "https://medium.com/@mister.funable/fixing-n8n-docker-error-the-x-forwarded-for-issue-bonus-d6924694b09a",
-        file: "/medium/08 - Fixing N8N Docker Error The X-Forwarded-For Issue + Bonus.md",
-        published: "2025-11-18",
-        description: "Troubleshooting X-Forwarded-For header and trust proxy issues in N8N Docker with Ngrok."
-      },
-      {
-        id: "09",
-        title: "Getting Instagram Posts with N8N (The Simple Way Part 1)",
-        category: "tech",
-        image: "/medium/images/09/img-01.png",
-        mediumUrl: "https://medium.com/@mister.funable/getting-instagram-posts-with-n8n-the-simple-way-part-1-c66cb5217054",
-        file: "/medium/09 - Getting Instagram Posts with N8N (The Simple Way Part 1).md",
-        published: "2025-11-18",
-        description: "Streamlined guide for automating Instagram post sharing through N8N."
-      },
-      {
-        id: "10",
-        title: "Figma Body Alternatives: From Archetypes to\u2026 Art",
-        category: "anime-dolls",
-        image: "/medium/images/10/img-01.png",
-        mediumUrl: "https://medium.com/@mister.funable/figma-body-alternatives-from-archetypes-to-art-b02c4a78390b",
-        file: "/medium/10 - Figma Body Alternatives From Archetypes to\u2026 Art.md",
-        published: "2025-11-19",
-        description: "Exploring alternative body options for Figma figures beyond the standard Archetype She."
-      },
-      {
-        id: "11",
-        title: "How to Publish Your n8n Template",
-        category: "tech",
-        image: "/medium/images/11/img-01.png",
-        mediumUrl: "https://medium.com/@mister.funable/how-to-publish-your-n8n-template-375832d8efd7",
-        file: "/medium/11 - How to Publish Your n8n Template.md",
-        published: "2025-11-21",
-        description: "Guide to sharing custom n8n workflow templates with the community."
-      },
-      {
-        id: "12",
-        title: "About Prompts, AI and Playing with Nanobana Pro",
-        category: "anime-dolls",
-        image: "/medium/images/12/img-01.png",
-        mediumUrl: "https://medium.com/@mister.funable/about-prompts-ai-and-playing-with-nanobana-pro-3737479e6f53",
-        file: "/medium/12 - About Prompts, AI and Playing with Nanobana Pro.md",
-        published: "2025-11-21",
-        description: "AI image generation and prompt engineering using character design as a case study."
-      },
-      {
-        id: "13",
-        title: "My Favorite Figmas \u2014 2025",
-        category: "anime-dolls",
-        image: "/medium/images/13/img-01.png",
-        mediumUrl: "https://medium.com/@mister.funable/my-favorite-figmas-2025-a4dd70db6be4",
-        file: "/medium/13 - My Favorite Figmas \u2014 2025.md",
-        published: "2025-11-26",
-        description: "A personal showcase of 160+ Figma collectibles with commentary on favorites."
-      },
-      {
-        id: "14",
-        title: "Backing Up N8N When the Data Lives in a Docker Volume",
-        category: "tech",
-        image: "/medium/images/14/img-01.png",
-        mediumUrl: "https://funable.medium.com/backing-up-n8n-when-the-data-lives-in-a-docker-volume-62e200d79172",
-        file: "/medium/14 - Backing Up N8N When the Data Lives in a Docker Volume.md",
-        published: "2025-12-06",
-        description: "How to back up and migrate n8n workflows and credentials stored in a Docker volume."
-      },
-      {
-        id: "15",
-        title: "BoardGameGeek Player Resources / Aids",
-        category: "tech",
-        image: "/medium/images/15/img-01.png",
-        mediumUrl: "https://funable.medium.com/boardgamegeek-player-resources-aids-b0a37d238455",
-        file: "/medium/15 - BoardGameGeek Player Resources Aids.md",
-        published: "2025-12-21",
-        description: "Finding community-made player aids and quick-reference sheets on BoardGameGeek."
-      },
-      {
-        id: "16",
-        title: "Marvel Champions Resources",
-        category: "tech",
-        image: "/medium/images/16/img-01.png",
-        mediumUrl: "https://funable.medium.com/marvel-champions-resources-7f6cef0bffe7",
-        file: "/medium/16 - Marvel Champions Resources.md",
-        published: "2025-12-21",
-        description: "Curated Marvel Champions LCG resources including guides, deck builders, and reference materials."
-      },
-      {
-        id: "17",
-        title: "Sony A6700 Updated Settings for Turntables with a Green Background",
-        category: "anime-dolls",
-        image: "/medium/images/17/img-01.png",
-        mediumUrl: "https://funable.medium.com/sony-a6700-updated-settings-for-turntables-with-a-green-background-657dcd66d160",
-        file: "/medium/17 - Sony A6700 Updated Settings for Turntables with a Green Background.md",
-        published: "2025-12-27",
-        description: "Updated camera settings for shooting figure turntable videos with a green background."
-      },
-      {
-        id: "18",
-        title: "A Silly Little osascript Utility That Types Notes For You",
-        category: "tech",
-        image: "/medium/images/18/img-01.png",
-        mediumUrl: "https://funable.medium.com/a-silly-little-osascript-utility-that-types-notes-for-you-dc5948a523d2",
-        file: "/medium/18 - A Silly Little osascript Utility That Types Notes For You.md",
-        published: "2025-12-29",
-        description: "A small AppleScript utility that picks a random line and types it into TextEdit on macOS."
-      },
-      {
-        id: "19",
-        title: "How to Design Your Medium Profile",
-        category: "tech",
-        image: "/medium/images/19/img-01.png",
-        mediumUrl: "https://funable.medium.com/how-to-design-your-medium-profile-47d93edd7e9d",
-        file: "/medium/19 - How to Design Your Medium Profile.md",
-        published: "2025-12-29",
-        description: "Customizing your Medium profile to match your branding across platforms."
-      },
-      {
-        id: "20",
-        title: "Getting Instagram Posts with N8N (The Simple Way Part 2: The Final Part)",
-        category: "tech",
-        image: "/medium/images/20/img-01.png",
-        mediumUrl: "https://funable.medium.com/getting-instagram-posts-with-n8n-the-simple-way-part-2-the-final-part-fdad1e999d74",
-        file: "/medium/20 - Getting Instagram Posts with N8N (The Simple Way Part 2 The Final Part).md",
-        published: "2025-12-31",
-        description: "Building an n8n workflow that auto-fetches Instagram posts and cross-posts them to Twitter/X."
-      },
-      {
-        id: "21",
-        title: "Adding Multiple Instagram Accounts to Your n8n Automation",
-        category: "tech",
-        image: "/medium/images/21/img-01.png",
-        mediumUrl: "https://funable.medium.com/adding-multiple-instagram-accounts-to-your-n8n-automation-772fd26af4a1",
-        file: "/medium/21 - Adding Multiple Instagram Accounts to Your n8n Automation.md",
-        published: "2026-01-01",
-        description: "Extending an n8n Instagram workflow to support multiple accounts via the Meta Developer Portal."
-      },
-      {
-        id: "22",
-        title: "From Zero \u2014 YouTube Lessons Part 0",
-        category: "tech",
-        image: "/medium/images/22/img-01.png",
-        mediumUrl: "https://funable.medium.com/from-zero-youtube-lessons-part-0-822bb8a9c883",
-        file: "/medium/22 - From Zero \u2014 YouTube Lessons Part 0.md",
-        published: "2026-01-03",
-        description: "Reflections on losing a YouTube channel and lessons learned about starting over."
-      },
-      {
-        id: "23",
-        title: "From Zero \u2014 YouTube Lessons Part 1",
-        category: "tech",
-        image: "/medium/images/23/img-01.png",
-        mediumUrl: "https://funable.medium.com/from-zero-youtube-lessons-part-1-efd9a93f2d1b",
-        file: "/medium/23 - From Zero \u2014 YouTube Lessons Part 1.md",
-        published: "2026-01-03",
-        description: "Practical advice on growing a YouTube channel from personal experience reaching 1,000+ subs."
-      },
-      {
-        id: "24",
-        title: "Part 3\u2014 Designing a Mascot/Logo: A Fresh Start",
-        category: "tech",
-        image: "/medium/images/24/img-01.png",
-        mediumUrl: "https://funable.medium.com/part-3-designing-a-mascot-logo-a-fresh-start-45f17906c0d2",
-        file: "/medium/24 - Part 3\u2014 Designing a MascotLogo A Fresh Start.md",
-        published: "2026-01-05",
-        description: "Redesigning a channel mascot using AI image generation for a simplified recognizable design."
-      },
-      {
-        id: "25",
-        title: "Why Your AI Images Look Worse After Each Iteration",
-        category: "tech",
-        image: "/medium/images/25/img-01.png",
-        mediumUrl: "https://funable.medium.com/why-your-ai-images-look-worse-after-each-iteration-b66abc24fced",
-        file: "/medium/25 - Why Your AI Images Look Worse After Each Iteration.md",
-        published: "2026-01-12",
-        description: "Why repeatedly iterating over AI-generated images degrades quality and what to do about it."
-      },
-      {
-        id: "26",
-        title: "Uploading Instagram Videos to YouTube with n8n",
-        category: "tech",
-        image: "/medium/images/26/img-01.png",
-        mediumUrl: "https://funable.medium.com/uploading-instagram-videos-to-youtube-with-n8n-6df5ad3c2523",
-        file: "/medium/26 - Uploading Instagram Videos to YouTube with n8n.md",
-        published: "2026-01-17",
-        description: "An n8n workflow that pulls videos from Instagram and uploads them to YouTube on a schedule."
-      },
-      {
-        id: "27",
-        title: "Side Notes #1: What Yu-Gi-Oh Taught Me About Leadership",
-        category: "tech",
-        image: "/medium/images/27/img-01.png",
-        mediumUrl: "https://funable.medium.com/side-notes-1-what-yu-gi-oh-taught-me-about-leadership-cd13634fbde7",
-        file: "/medium/27 - Side Notes #1 What Yu-Gi-Oh Taught Me About Leadership.md",
-        published: "2026-01-23",
-        description: "Connecting lessons from playing Yu-Gi-Oh to the leadership skill of helping people shine."
-      },
-      {
-        id: "28",
-        title: "Claude Code (Part 1): Do You Actually Need This If You Have Cursor?",
-        category: "tech",
-        image: "/medium/images/28/img-01.png",
-        mediumUrl: "https://funable.medium.com/claude-code-part-1-do-you-actually-need-this-if-you-have-cursor-30b902668de4",
-        file: "/medium/28 - Claude Code (Part 1) Do You Actually Need This If You Have Cursor.md",
-        published: "2026-01-23",
-        description: "Overview of Claude Code as a terminal AI coding assistant and how it complements Cursor."
-      }
+      { id:"01", title:"Running N8N Locally with Ngrok", category:"tech", image:"/medium/images/01/img-01.png", published:"2025-10-27", description:"Run N8N locally and expose it via Ngrok tunnel for webhook callbacks." },
+      { id:"02", title:"How (Not) to Work with Local Files in N8N", category:"tech", image:"/medium/images/02/img-01.png", published:"2025-11-10", description:"Lessons learned automating video uploads and working with local files in n8n." },
+      { id:"03", title:"Getting Started with Meshtastic on Heltec V3 and LILYGO T-Beam", category:"tech", image:"/medium/images/03/img-01.png", published:"2025-11-14", description:"Introduction to Meshtastic mesh networking with Heltec V3 and LILYGO T-Beam devices." },
+      { id:"04", title:"Meshtastic Questions I Had After Getting Started", category:"tech", image:"/medium/images/04/img-01.png", published:"2025-11-14", description:"Q&A covering common Meshtastic questions from beginner to intermediate level." },
+      { id:"05", title:"Setting Up a Local Meshtastic Message Forwarder", category:"tech", image:"/medium/images/05/img-01.png", published:"2025-11-14", description:"Set up a local forwarder that listens to Meshtastic channels and exports messages via Python." },
+      { id:"06", title:"N8N Nodes You Should Know (But Probably Don't)", category:"tech", image:"/medium/images/06/img-01.png", published:"2025-11-16", description:"Overlooked N8N nodes that simplify projects and reduce maintenance." },
+      { id:"07", title:"Sony A6700 Settings for Unboxing and Figure Videos", category:"anime-dolls", image:"/medium/images/07/img-01.png", published:"2025-11-17", description:"Camera settings guide for the Sony A6700 for recording unboxing and collectible videos." },
+      { id:"08", title:"Fixing N8N Docker Error: The X-Forwarded-For Issue + Bonus", category:"tech", image:"/medium/images/08/img-01.png", published:"2025-11-18", description:"Troubleshooting X-Forwarded-For header and trust proxy issues in N8N Docker with Ngrok." },
+      { id:"09", title:"Getting Instagram Posts with N8N (The Simple Way Part 1)", category:"tech", image:"/medium/images/09/img-01.png", published:"2025-11-18", description:"Streamlined guide for automating Instagram post sharing through N8N." },
+      { id:"10", title:"Figma Body Alternatives: From Archetypes to\u2026 Art", category:"anime-dolls", image:"/medium/images/10/img-01.png", published:"2025-11-19", description:"Exploring alternative body options for Figma figures beyond the standard Archetype She." },
+      { id:"11", title:"How to Publish Your n8n Template", category:"tech", image:"/medium/images/11/img-01.png", published:"2025-11-21", description:"Guide to sharing custom n8n workflow templates with the community." },
+      { id:"12", title:"About Prompts, AI and Playing with Nanobana Pro", category:"anime-dolls", image:"/medium/images/12/img-01.png", published:"2025-11-21", description:"AI image generation and prompt engineering using character design as a case study." },
+      { id:"13", title:"My Favorite Figmas \u2014 2025", category:"anime-dolls", image:"/medium/images/13/img-01.png", published:"2025-11-26", description:"A personal showcase of 160+ Figma collectibles with commentary on favorites." },
+      { id:"14", title:"Backing Up N8N When the Data Lives in a Docker Volume", category:"tech", image:"/medium/images/14/img-01.png", published:"2025-12-06", description:"How to back up and migrate n8n workflows and credentials stored in a Docker volume." },
+      { id:"15", title:"BoardGameGeek Player Resources / Aids", category:"tech", image:"/medium/images/15/img-01.png", published:"2025-12-21", description:"Finding community-made player aids and quick-reference sheets on BoardGameGeek." },
+      { id:"16", title:"Marvel Champions Resources", category:"tech", image:"/medium/images/16/img-01.png", published:"2025-12-21", description:"Curated Marvel Champions LCG resources including guides, deck builders, and reference materials." },
+      { id:"17", title:"Sony A6700 Updated Settings for Turntables with a Green Background", category:"anime-dolls", image:"/medium/images/17/img-01.png", published:"2025-12-27", description:"Updated camera settings for shooting figure turntable videos with a green background." },
+      { id:"18", title:"A Silly Little osascript Utility That Types Notes For You", category:"tech", image:"/medium/images/18/img-01.png", published:"2025-12-29", description:"A small AppleScript utility that picks a random line and types it into TextEdit on macOS." },
+      { id:"19", title:"How to Design Your Medium Profile", category:"tech", image:"/medium/images/19/img-01.png", published:"2025-12-29", description:"Customizing your Medium profile to match your branding across platforms." },
+      { id:"20", title:"Getting Instagram Posts with N8N (The Simple Way Part 2: The Final Part)", category:"tech", image:"/medium/images/20/img-01.png", published:"2025-12-31", description:"Building an n8n workflow that auto-fetches Instagram posts and cross-posts them to Twitter/X." },
+      { id:"21", title:"Adding Multiple Instagram Accounts to Your n8n Automation", category:"tech", image:"/medium/images/21/img-01.png", published:"2026-01-01", description:"Extending an n8n Instagram workflow to support multiple accounts via the Meta Developer Portal." },
+      { id:"22", title:"From Zero \u2014 YouTube Lessons Part 0", category:"tech", image:"/medium/images/22/img-01.png", published:"2026-01-03", description:"Reflections on losing a YouTube channel and lessons learned about starting over." },
+      { id:"23", title:"From Zero \u2014 YouTube Lessons Part 1", category:"tech", image:"/medium/images/23/img-01.png", published:"2026-01-03", description:"Practical advice on growing a YouTube channel from personal experience reaching 1,000+ subs." },
+      { id:"24", title:"Part 3\u2014 Designing a Mascot/Logo: A Fresh Start", category:"tech", image:"/medium/images/24/img-01.png", published:"2026-01-05", description:"Redesigning a channel mascot using AI image generation for a simplified recognizable design." },
+      { id:"25", title:"Why Your AI Images Look Worse After Each Iteration", category:"tech", image:"/medium/images/25/img-01.png", published:"2026-01-12", description:"Why repeatedly iterating over AI-generated images degrades quality and what to do about it." },
+      { id:"26", title:"Uploading Instagram Videos to YouTube with n8n", category:"tech", image:"/medium/images/26/img-01.png", published:"2026-01-17", description:"An n8n workflow that pulls videos from Instagram and uploads them to YouTube on a schedule." },
+      { id:"27", title:"Side Notes #1: What Yu-Gi-Oh Taught Me About Leadership", category:"tech", image:"/medium/images/27/img-01.png", published:"2026-01-23", description:"Connecting lessons from playing Yu-Gi-Oh to the leadership skill of helping people shine." },
+      { id:"28", title:"Claude Code (Part 1): Do You Actually Need This If You Have Cursor?", category:"tech", image:"/medium/images/28/img-01.png", published:"2026-01-23", description:"Overview of Claude Code as a terminal AI coding assistant and how it complements Cursor." }
     ];
 
-    function formatDate(dateStr) {
-      var d = new Date(dateStr + 'T00:00:00');
-      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    var sorted = posts.slice().sort(function(a,b){ return b.published.localeCompare(a.published); });
+    function fmt(d){ return new Date(d+'T00:00:00').toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}); }
+    function esc(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+    function catLabel(c){ return c === 'anime-dolls' ? 'Anime & Dolls' : 'Tech'; }
+
+    // Featured post (most recent)
+    var feat = sorted[0];
+    var featEl = document.getElementById('posts-featured');
+    if(featEl && feat){
+      featEl.innerHTML = '<a href="/posts/article.html?id='+feat.id+'" class="posts-featured-card">' +
+        '<div class="posts-featured-img"><img src="'+esc(feat.image)+'" alt="'+esc(feat.title)+'" /></div>' +
+        '<div class="posts-featured-body">' +
+          '<span class="ds-label" style="color:var(--ds-gold)">'+esc(catLabel(feat.category))+' &middot; Latest</span>' +
+          '<h2 class="posts-featured-title">'+esc(feat.title)+'</h2>' +
+          '<p class="posts-featured-desc">'+esc(feat.description)+'</p>' +
+          '<time class="posts-featured-date" datetime="'+feat.published+'">'+fmt(feat.published)+'</time>' +
+        '</div></a>';
     }
 
-    function escapeHtml(str) {
-      var div = document.createElement('div');
-      div.textContent = str;
-      return div.innerHTML;
-    }
+    // Grid cards (skip featured)
+    var rest = sorted.slice(1);
+    var activeCategory = 'all';
 
-    function renderCards(category, containerId) {
-      var filtered = posts.filter(function(p) { return p.category === category; });
-      var container = document.getElementById(containerId);
+    function renderGrid(category){
+      var filtered = category === 'all' ? rest : rest.filter(function(p){ return p.category === category; });
+      var grid = document.getElementById('posts-all-grid');
       var html = '';
-
-      for (var i = 0; i < filtered.length; i++) {
+      for(var i=0; i<filtered.length; i++){
         var p = filtered[i];
-        html += '<a href="/posts/article.html?id=' + p.id + '" class="post-card">' +
-          '<div class="post-card-img">' +
-            '<img src="' + escapeHtml(p.image) + '" alt="' + escapeHtml(p.title) + '" loading="lazy" />' +
-          '</div>' +
+        html += '<a href="/posts/article.html?id='+p.id+'" class="post-card" data-category="'+p.category+'">' +
+          '<div class="post-card-img"><img src="'+esc(p.image)+'" alt="'+esc(p.title)+'" loading="lazy" /></div>' +
           '<div class="post-card-body">' +
-            '<span class="post-card-date">' + formatDate(p.published) + '</span>' +
-            '<h3 class="post-card-title">' + escapeHtml(p.title) + '</h3>' +
-            '<p class="post-card-desc">' + escapeHtml(p.description) + '</p>' +
-          '</div>' +
-          '<span class="post-card-medium-badge">' +
-            '<svg viewBox="0 0 1043.63 592.71" xmlns="http://www.w3.org/2000/svg"><path d="M588.67 296.36c0 163.67-131.78 296.35-294.33 296.35S0 460 0 296.36 131.78 0 294.34 0s294.33 132.69 294.33 296.36M911.56 296.36c0 154.06-65.89 278.88-147.17 278.88s-147.17-124.82-147.17-278.88S683.11 17.48 764.39 17.48s147.17 124.82 147.17 278.88M1043.63 296.36c0 138-23.17 249.94-51.76 249.94s-51.75-111.91-51.75-249.94 23.17-249.94 51.75-249.94 51.76 111.9 51.76 249.94"/></svg>' +
-            ' Medium' +
-          '</span>' +
-        '</a>';
+            '<span class="post-card-cat ds-label">'+esc(catLabel(p.category))+'</span>' +
+            '<h3 class="post-card-title">'+esc(p.title)+'</h3>' +
+            '<p class="post-card-desc">'+esc(p.description)+'</p>' +
+            '<time class="post-card-date" datetime="'+p.published+'">'+fmt(p.published)+'</time>' +
+          '</div></a>';
       }
-
-      container.innerHTML = html;
+      grid.innerHTML = html;
     }
 
-    renderCards('anime-dolls', 'anime-dolls-grid');
-    renderCards('tech', 'tech-grid');
+    renderGrid('all');
+
+    // Tab switching
+    var tabs = document.querySelectorAll('.posts-tab');
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        tabs.forEach(function(t){ t.classList.remove('active'); });
+        this.classList.add('active');
+        renderGrid(this.dataset.category);
+      });
+    });
+
+    // Handle hash navigation
+    var hash = window.location.hash.replace('#','');
+    if(hash === 'anime-dolls' || hash === 'tech'){
+      tabs.forEach(function(t){
+        t.classList.remove('active');
+        if(t.dataset.category === hash) t.classList.add('active');
+      });
+      renderGrid(hash);
+    }
   })();
   </script>
 </body>

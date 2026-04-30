@@ -1,0 +1,232 @@
+/* ============================================
+   DESIGN SYSTEM — Undefined Collectibles
+   Editorial Collector's Journal
+   ============================================ */
+
+/* Typography: Newsreader for body, preserving Special Gothic Condensed One for display */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap');
+
+:root {
+  /* ── Palette ── */
+  --ds-gold: #D4AF37;
+  --ds-gold-light: #e8cc6e;
+  --ds-gold-dim: rgba(212, 175, 55, 0.12);
+  --ds-gold-glow: rgba(212, 175, 55, 0.25);
+  --ds-accent: #c8963e;
+  --ds-slate-900: #1a202c;
+  --ds-slate-800: #2d3748;
+  --ds-slate-700: #4a5568;
+  --ds-slate-500: #718096;
+  --ds-slate-400: #a0aec0;
+  --ds-slate-200: #e2e8f0;
+  --ds-slate-100: #edf2f7;
+
+  /* Warm paper tones */
+  --ds-paper: #faf8f4;
+  --ds-paper-warm: #f5f0e8;
+  --ds-paper-card: #ffffff;
+  --ds-paper-raised: #fffdf9;
+  --ds-ink: #2c2c2c;
+  --ds-ink-light: #4a5568;
+  --ds-ink-muted: #8b95a5;
+
+  /* ── Typography ── */
+  --ds-font-display: 'Special Gothic Condensed One', sans-serif;
+  --ds-font-body: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --ds-font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ds-font-mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+
+  /* Fluid type scale (minor third) */
+  --ds-text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
+  --ds-text-sm: clamp(0.8125rem, 0.77rem + 0.2vw, 0.875rem);
+  --ds-text-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+  --ds-text-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
+  --ds-text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --ds-text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  --ds-text-3xl: clamp(2rem, 1.5rem + 2.5vw, 3rem);
+  --ds-text-4xl: clamp(2.5rem, 1.75rem + 3.75vw, 4rem);
+
+  --ds-leading-tight: 1.2;
+  --ds-leading-snug: 1.35;
+  --ds-leading-normal: 1.65;
+  --ds-leading-relaxed: 1.8;
+
+  /* ── Spacing (8px base) ── */
+  --ds-space-1: 0.25rem;   /* 4 */
+  --ds-space-2: 0.5rem;    /* 8 */
+  --ds-space-3: 0.75rem;   /* 12 */
+  --ds-space-4: 1rem;      /* 16 */
+  --ds-space-5: 1.5rem;    /* 24 */
+  --ds-space-6: 2rem;      /* 32 */
+  --ds-space-8: 3rem;      /* 48 */
+  --ds-space-10: 4rem;     /* 64 */
+  --ds-space-12: 5rem;     /* 80 */
+  --ds-space-16: 8rem;     /* 128 */
+
+  /* ── Radii ── */
+  --ds-radius-sm: 6px;
+  --ds-radius-md: 10px;
+  --ds-radius-lg: 16px;
+  --ds-radius-xl: 24px;
+  --ds-radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --ds-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --ds-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --ds-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --ds-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --ds-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.12);
+  --ds-shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.2);
+
+  /* ── Transitions ── */
+  --ds-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ds-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ds-duration-fast: 0.15s;
+  --ds-duration-base: 0.3s;
+  --ds-duration-slow: 0.5s;
+
+  /* ── Layout ── */
+  --ds-max-width: 1280px;
+  --ds-max-width-narrow: 800px;
+  --ds-max-width-wide: 1400px;
+  --ds-gutter: clamp(1rem, 2vw + 0.5rem, 2.5rem);
+  --ds-navbar-height: 70px;
+}
+
+/* ── Global resets using design tokens ── */
+body {
+  font-family: var(--ds-font-body);
+  font-size: var(--ds-text-base);
+  line-height: var(--ds-leading-normal);
+  color: var(--ds-ink);
+  background-color: var(--ds-paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+/* ── Headings ── */
+h1, h2, h3, h4 {
+  font-family: var(--ds-font-display);
+  line-height: var(--ds-leading-tight);
+  color: var(--ds-slate-900);
+  letter-spacing: 0.5px;
+}
+
+/* ── Prose defaults ── */
+p {
+  font-family: var(--ds-font-body);
+  line-height: var(--ds-leading-normal);
+  color: var(--ds-ink-light);
+}
+
+/* ── Section divider — gold accent bar ── */
+.ds-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ds-gold), var(--ds-accent));
+  border-radius: 2px;
+  border: none;
+}
+
+.ds-divider--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Section spacing ── */
+.ds-section {
+  padding: var(--ds-space-12) 0;
+}
+
+.ds-container {
+  max-width: var(--ds-max-width);
+  margin: 0 auto;
+  padding: 0 var(--ds-gutter);
+}
+
+.ds-container--narrow {
+  max-width: var(--ds-max-width-narrow);
+}
+
+.ds-container--wide {
+  max-width: var(--ds-max-width-wide);
+}
+
+/* ── Cards ── */
+.ds-card {
+  background: var(--ds-paper-card);
+  border: 1px solid var(--ds-slate-200);
+  border-radius: var(--ds-radius-lg);
+  box-shadow: var(--ds-shadow-sm);
+  transition: transform var(--ds-duration-base) var(--ds-ease),
+              box-shadow var(--ds-duration-base) var(--ds-ease);
+  overflow: hidden;
+}
+
+.ds-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ds-shadow-lg);
+}
+
+/* ── Section headers ── */
+.ds-section-header {
+  text-align: center;
+  margin-bottom: var(--ds-space-8);
+}
+
+.ds-section-title {
+  font-size: var(--ds-text-3xl);
+  text-transform: uppercase;
+  margin: 0 0 var(--ds-space-3) 0;
+}
+
+.ds-section-subtitle {
+  font-family: var(--ds-font-body);
+  font-size: var(--ds-text-lg);
+  color: var(--ds-ink-muted);
+  font-weight: 400;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ── Subtle paper texture overlay ── */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ── Utility: editorial label ── */
+.ds-label {
+  font-family: var(--ds-font-ui);
+  font-size: var(--ds-text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--ds-ink-muted);
+}
+
+/* ── Utility: gold accent text ── */
+.ds-gold-text {
+  background: linear-gradient(135deg, var(--ds-gold), var(--ds-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .ds-card:hover {
+    transform: none;
+  }
+}

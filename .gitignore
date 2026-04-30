@@ -3,6 +3,8 @@
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+.playwright-mcp/
+changes
 
 # Node (if you use it)
 node_modules/
@@ -36,4 +38,4 @@ _site/
 
 # Build files
 dist/
-build/ 
+build/

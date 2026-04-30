@@ -248,8 +248,9 @@
 }
 
 .card-description {
+  font-family: var(--ds-font-body, Georgia, serif);
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
   opacity: 0;
   transform: translateY(20px);

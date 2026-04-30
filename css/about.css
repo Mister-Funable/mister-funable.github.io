@@ -1,54 +1,53 @@
+/* ============================================
+   ABOUT PAGE STYLES
+   Consistent with site-wide patterns
+   ============================================ */
+
 .about-container {
   max-width: 1200px;
-  margin: 80px auto 40px;
-  padding: 0 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
 }
 
-.about-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.about-header h1 {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  font-size: 2.5rem;
-  color: #333;
-  font-weight: 600;
-}
-
+/* Content sections spacing */
 .about-content {
   line-height: 1.6;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
-.about-content section {
-  margin-bottom: 40px;
+.about-content > section,
+.about-content > div {
+  margin-bottom: 2.5rem;
 }
 
+/* Mission Statement */
 .mission-statement {
-  background: #fef9f0;
-  padding: 35px;
-  border-radius: 12px;
-  margin-bottom: 40px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  border-left: 4px solid var(--brand-primary, #D4AF37);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: var(--ds-paper-card, #ffffff);
+  padding: 2rem 2.5rem;
+  border-radius: var(--ds-radius-lg, 12px);
+  margin-bottom: 2.5rem;
+  border: 1px solid var(--ds-slate-200, #f0f0f0);
+  border-left: 4px solid var(--ds-gold, #D4AF37);
+  box-shadow: var(--ds-shadow-sm);
   transition: all 0.3s ease;
 }
 
 .mission-statement:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: var(--ds-shadow-md);
 }
 
 .mission-statement h2 {
-  color: var(--brand-accent, #f39c12);
-  margin-bottom: 20px;
+  color: var(--ds-slate-900, #1a202c);
+  margin-bottom: 1rem;
 }
 
+.mission-statement p {
+  font-family: var(--ds-font-body, Georgia, serif);
+}
+
+/* Features Section */
 .features {
-  margin: 40px 0;
+  margin: 2.5rem 0;
 }
 
 .features ul {
@@ -56,19 +55,23 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .features li {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  background: var(--ds-paper-card, #ffffff);
+  padding: 1.5rem;
+  border-radius: var(--ds-radius-lg, 12px);
+  border: 1px solid var(--ds-slate-200, #f0f0f0);
+  border-left: 4px solid var(--ds-gold, #D4AF37);
+  box-shadow: var(--ds-shadow-sm);
   transition: all 0.3s ease;
-  border-left: 4px solid transparent;
   position: relative;
   overflow: hidden;
+}
+
+.features li p {
+  font-family: var(--ds-font-body, Georgia, serif);
 }
 
 .features li::before {
@@ -77,8 +80,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  height: 3px;
+  background: linear-gradient(90deg, var(--ds-gold), var(--ds-accent, #f39c12));
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -89,45 +92,15 @@
 
 .features li:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: var(--ds-shadow-md);
 }
 
-/* Individual feature colors - soft solid colors */
-.features li:nth-child(1) {
-  background: #f8f0ff;
-  color: #2c3e50;
-  border-left-color: #9b59b6;
-}
-
-.features li:nth-child(1) h3 {
-  color: #8e44ad;
-}
-
-.features li:nth-child(2) {
-  background: #f0f8ff;
-  color: #2c3e50;
-  border-left-color: #3498db;
-}
-
-.features li:nth-child(2) h3 {
-  color: #2980b9;
-}
-
-.features li:nth-child(3) {
-  background: #fff8f0;
-  color: #2c3e50;
-  border-left-color: #e67e22;
-}
-
-.features li:nth-child(3) h3 {
-  color: #d35400;
-}
-
+/* Mascot Section */
 .mascot-section {
-  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
-  padding: 40px;
+  background: linear-gradient(165deg, #1e293b 0%, #334155 50%, #475569 100%);
+  padding: 2.5rem;
   border-radius: 12px;
-  margin: 40px 0;
+  margin: 2.5rem 0;
   color: white;
 }
 
@@ -136,8 +109,8 @@
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 40px;
-  margin-bottom: 40px;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .mascot-info {
@@ -168,7 +141,7 @@
 }
 
 .mascot-info p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   margin-bottom: 20px;
   opacity: 0.95;
@@ -177,33 +150,37 @@
 .mascot-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 12px;
 }
 
 .mascot-feature {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 8px 12px;
-  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 8px 14px;
+  border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .feature-icon {
   font-size: 1.2rem;
 }
 
+/* Gallery Section */
 .mascot-gallery-section {
-  margin-top: 40px;
+  margin-top: 2.5rem;
   text-align: center;
 }
 
+.mascot-gallery-section h3,
 .mascot-gallery-section h4 {
   color: white;
   font-size: 1.5rem;
-  margin-bottom: 30px;
+  margin-bottom: 1.5rem;
   font-weight: 600;
   text-align: center;
 }
@@ -225,7 +202,7 @@
   flex: 1;
   overflow: hidden;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   padding: 20px;
   height: 400px;
   display: flex;
@@ -233,7 +210,7 @@
   justify-content: center;
   width: 100%;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .carousel-track {
@@ -262,7 +239,7 @@
 }
 
 .carousel-btn {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(212, 175, 55, 0.3);
   border: none;
   color: white;
   font-size: 24px;
@@ -278,12 +255,12 @@
 }
 
 .carousel-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(212, 175, 55, 0.5);
   transform: scale(1.1);
 }
 
 .carousel-btn:disabled {
-  opacity: 0.5;
+  opacity: 0.3;
   cursor: not-allowed;
   transform: none;
 }
@@ -308,12 +285,12 @@
 }
 
 .dot.active {
-  background: rgba(255, 255, 255, 0.8);
-  transform: scale(1.2);
+  background: #D4AF37;
+  transform: scale(1.3);
 }
 
 .dot:hover {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(212, 175, 55, 0.6);
 }
 
 .design-img-link {
@@ -352,59 +329,81 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.contribute {
-  margin: 40px 0;
+/* Mascot Facts */
+.mascot-facts {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.contribute-options {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+.mascot-facts h3 {
+  color: white;
 }
 
-.contribute-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+.mascot-facts ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mascot-facts li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Instagram Showcase */
+.instagram-showcase {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+}
+
+.instagram-showcase h3 {
+  color: #1a202c;
+}
+
+.instagram-showcase p {
+  color: #4a5568;
+}
+
+/* Community Section */
+.community-title {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: #1a202c;
 }
 
 .community {
-  background: linear-gradient(135deg, #5865F2 0%, #7289DA 100%);
-  padding: 40px;
+  background: linear-gradient(165deg, #1e293b 0%, #334155 50%, #475569 100%);
+  padding: 2.5rem;
   border-radius: 12px;
-  margin: 0 0 40px 0;
+  margin: 0 0 2.5rem 0;
   color: white;
   text-align: center;
 }
 
 .discord-invite {
-  margin-top: 30px;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
 }
 
 .discord-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
-  padding: 30px;
+  padding: 2rem;
   max-width: 500px;
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1.5rem;
   transition: all 0.3s ease;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .discord-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .discord-icon {
@@ -420,37 +419,38 @@
 
 .discord-content h3 {
   color: white;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
   font-weight: 600;
 }
 
 .discord-content p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
   line-height: 1.5;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .discord-btn {
   display: inline-flex;
   align-items: center;
-  background: white;
-  color: #5865F2;
-  padding: 12px 24px;
+  background: #D4AF37;
+  color: #1a1a1a;
+  padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  border: none;
 }
 
 .discord-btn:hover {
-  background: #f8f9fa;
-  color: #4752C4;
+  background: #f39c12;
+  color: #1a1a1a;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
   text-decoration: none;
 }
 
@@ -458,76 +458,32 @@
   transform: translateY(0);
 }
 
-h2 {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  color: #333;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
 
-/* Section titles outside of blocks */
-.about-content > h2 {
-  margin-top: 50px;
-  margin-bottom: 30px;
-  font-size: 2.2rem;
-  text-align: left;
-}
-
-.community-title {
-  text-align: center !important;
-  margin-top: 50px;
-  margin-bottom: 30px;
-  font-size: 2.2rem;
-}
-
-h3 {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  color: #444;
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-a {
-  color: #3498db;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Mobile responsive styles */
 @media (max-width: 768px) {
   .about-container {
-    margin-top: 60px;
-    padding: 0 15px;
-  }
-
-  .about-header h1 {
-    font-size: 2rem;
+    padding: 0 1.25rem 3rem;
   }
 
   .features ul {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 1rem;
   }
 
   .features li {
-    padding: 20px;
-  }
-
-  .contribute-options {
-    grid-template-columns: 1fr;
+    padding: 1.25rem;
   }
 
   .mascot-main-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 20px;
+    gap: 1.5rem;
   }
 
   .mascot-main-img {
-    width: 150px;
+    width: 160px;
   }
 
   .mascot-features {
@@ -535,16 +491,16 @@ a:hover {
   }
 
   .mascot-section {
-    padding: 30px 20px;
+    padding: 2rem 1.25rem;
   }
 
   .mascot-gallery-section {
-    margin-top: 30px;
+    margin-top: 2rem;
   }
 
   .mascot-gallery-section h4 {
     font-size: 1.3rem;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 
   .carousel-container {
@@ -575,13 +531,13 @@ a:hover {
   }
 
   .community {
-    padding: 30px 20px;
+    padding: 2rem 1.25rem;
   }
 
   .discord-card {
     flex-direction: column;
     text-align: center;
-    padding: 25px;
+    padding: 1.5rem;
   }
 
   .discord-content {
@@ -589,15 +545,34 @@ a:hover {
   }
 
   .discord-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .discord-content p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 0 1rem 2rem;
   }
 
-  .discord-btn {
-    padding: 10px 20px;
-    font-size: 0.95rem;
+  .mission-statement {
+    padding: 1.5rem;
   }
-} 
+
+  .mascot-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .carousel-wrapper {
+    height: 300px;
+    padding: 12px;
+  }
+
+  .design-img {
+    width: 180px;
+    height: 180px;
+  }
+}

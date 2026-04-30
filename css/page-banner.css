@@ -48,9 +48,10 @@
 }
 
 .page-banner-title {
-  font-family: 'Special Gothic Condensed One', sans-serif;
-  font-size: 3.5rem;
+  font-family: var(--ds-font-display, 'Special Gothic Condensed One', sans-serif);
+  font-size: var(--ds-text-4xl, 3.5rem);
   font-weight: 800;
+  color: #ffffff;
   margin: 0 0 0.75rem 0;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   letter-spacing: 1px;
@@ -58,8 +59,10 @@
 }
 
 .page-banner-subtitle {
-  font-size: 1.25rem;
+  font-family: var(--ds-font-body, Georgia, serif);
+  font-size: var(--ds-text-lg, 1.25rem);
   font-weight: 400;
+  font-style: italic;
   margin: 0;
   opacity: 0.95;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);

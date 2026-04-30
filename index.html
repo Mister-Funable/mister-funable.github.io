@@ -60,7 +60,7 @@
   <link rel="preconnect" href="https://www.googletagmanager.com">
   
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Condensed+One&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Condensed+One&family=Caveat:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
   
   <!-- Tailwind (Play CDN) - Preflight disabled to preserve existing styles -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -86,6 +86,7 @@
   </script>
   
   <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/navbar-modern.css">
   <link rel="stylesheet" href="css/landing-modern.css">
@@ -368,6 +369,57 @@
             </div>
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest from the Notebook -->
+  <section class="latest-section ds-section" id="latest">
+    <div class="ds-container">
+      <div class="ds-section-header">
+        <p class="ds-label" data-lang-en="From the Notebook" data-lang-es="Del Cuaderno">From the Notebook</p>
+        <h2 class="ds-section-title" data-lang-en="Latest Posts" data-lang-jp="最新の投稿" data-lang-es="Publicaciones Recientes">Latest Posts</h2>
+        <hr class="ds-divider ds-divider--center">
+      </div>
+
+      <div class="latest-grid" id="latest-posts-grid">
+      </div>
+
+      <div class="latest-cta">
+        <a href="/posts" class="latest-cta-link" data-lang-en="View all posts" data-lang-jp="すべての投稿を見る" data-lang-es="Ver todas las publicaciones">View all posts <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Guides -->
+  <section class="guides-strip">
+    <div class="ds-container">
+      <div class="ds-section-header">
+        <p class="ds-label" data-lang-en="Beginner Friendly" data-lang-es="Para Principiantes">Beginner Friendly</p>
+        <h2 class="ds-section-title" data-lang-en="Guides" data-lang-jp="ガイド" data-lang-es="Guías">Guides</h2>
+        <hr class="ds-divider ds-divider--center">
+      </div>
+      <div class="guides-strip-grid">
+        <a href="/info/seamless-dolls" class="guide-chip">
+          <span class="guide-chip-icon">&#x1F4D6;</span>
+          <span class="guide-chip-text" data-lang-en="Seamless Dolls Tips" data-lang-es="Consejos de Muñecas">Seamless Dolls Tips</span>
+        </a>
+        <a href="/info/aliexpress" class="guide-chip">
+          <span class="guide-chip-icon">&#x1F6D2;</span>
+          <span class="guide-chip-text" data-lang-en="Aliexpress Tips" data-lang-es="Consejos de Aliexpress">Aliexpress Tips</span>
+        </a>
+        <a href="/info/lightsabers" class="guide-chip">
+          <span class="guide-chip-icon">&#x2694;&#xFE0F;</span>
+          <span class="guide-chip-text" data-lang-en="Lightsabers Fonts" data-lang-es="Fuentes de Sables">Lightsabers Fonts</span>
+        </a>
+        <a href="/info/stores-review" class="guide-chip">
+          <span class="guide-chip-icon">&#x2B50;</span>
+          <span class="guide-chip-text" data-lang-en="Stores Review" data-lang-es="Reseñas de Tiendas">Stores Review</span>
+        </a>
+        <a href="/metal-build" class="guide-chip">
+          <span class="guide-chip-icon">&#x1F916;</span>
+          <span class="guide-chip-text" data-lang-en="Metal Build Manuals" data-lang-es="Manuales Metal Build">Metal Build Manuals</span>
+        </a>
       </div>
     </div>
   </section>
@@ -711,6 +763,36 @@
         console.error('Google Analytics (gtag) is not loaded!');
       }
     });
+  </script>
+
+  <script>
+    // Latest Posts — render the 4 most recent
+    (function() {
+      var posts = [
+        { id:"28", title:"Claude Code (Part 1): Do You Actually Need This If You Have Cursor?", category:"tech", image:"/medium/images/28/img-01.png", published:"2026-01-23", description:"Overview of Claude Code as a terminal AI coding assistant and how it complements Cursor." },
+        { id:"27", title:"Side Notes #1: What Yu-Gi-Oh Taught Me About Leadership", category:"tech", image:"/medium/images/27/img-01.png", published:"2026-01-23", description:"Connecting lessons from playing Yu-Gi-Oh to the leadership skill of helping people shine." },
+        { id:"26", title:"Uploading Instagram Videos to YouTube with n8n", category:"tech", image:"/medium/images/26/img-01.png", published:"2026-01-17", description:"An n8n workflow that pulls videos from Instagram and uploads them to YouTube on a schedule." },
+        { id:"25", title:"Why Your AI Images Look Worse After Each Iteration", category:"tech", image:"/medium/images/25/img-01.png", published:"2026-01-12", description:"Why repeatedly iterating over AI-generated images degrades quality and what to do about it." }
+      ];
+      function formatDate(d){ var dt=new Date(d+'T00:00:00'); return dt.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}); }
+      function esc(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+      var grid=document.getElementById('latest-posts-grid');
+      if(!grid) return;
+      var html='';
+      for(var i=0;i<posts.length;i++){
+        var p=posts[i];
+        var isFeatured = i === 0;
+        html += '<a href="/posts/article.html?id='+p.id+'" class="latest-card'+(isFeatured?' latest-card--featured':'')+'">' +
+          '<div class="latest-card-img"><img src="'+esc(p.image)+'" alt="'+esc(p.title)+'" loading="lazy" /></div>' +
+          '<div class="latest-card-body">' +
+            '<span class="ds-label">'+esc(p.category.replace('-',' & '))+'</span>' +
+            '<h3 class="latest-card-title">'+esc(p.title)+'</h3>' +
+            '<p class="latest-card-desc">'+esc(p.description)+'</p>' +
+            '<time class="latest-card-date" datetime="'+p.published+'">'+formatDate(p.published)+'</time>' +
+          '</div></a>';
+      }
+      grid.innerHTML=html;
+    })();
   </script>
 
   <script>

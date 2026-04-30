@@ -69,9 +69,10 @@
   transform: scaleX(1);
 }
 
-/* Remove body padding */
-body {
-  padding-bottom: 0;
+/* Reserve space at page bottom so fixed footer doesn't overlap content */
+#footer-placeholder {
+  display: block;
+  min-height: 100px;
 }
 
 /* Footer Container */
